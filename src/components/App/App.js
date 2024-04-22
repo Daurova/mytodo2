@@ -16,7 +16,7 @@ class App extends Component {
         description: "task 1",
         created: distance,
         createdDate: new Date(),
-        completed: false
+        completed: true
       },
       {
         id: 2,
@@ -51,11 +51,42 @@ class App extends Component {
 
   onEditTask = (id) => {
     console.log("edit ", id);
-  }
+   
+    }
+  
+  onCompletedTask=(id) => {
+    console.log('complete', id);
+    this.setState (({tasks})=>{
+      const updatedTasks = tasks.map(task => {
+        if (task.id === id) {
+          return {
+            ...task,
+            completed: !task.completed
+          };
+        }
+        return task;
+      });
+  
+      return { tasks: updatedTasks };
+
+    })
+  } 
 
   onDeleteTask = (id) => {
     console.log("delete ", id);
+    this.setState(({tasks})=>{
+      const idx = tasks.findIndex((el)=>el.id===id);
+      const newTasks = [
+        ...tasks.slice(0,idx),
+        ...tasks.slice(idx+1)
+      ];
+      return {tasks: newTasks};
+    });
   }
+
+  completed = (id)=>{
+console.log(id)  }
+  
 
   render() {
     return (
@@ -64,7 +95,9 @@ class App extends Component {
         <TaskList 
           tasks={this.state.tasks} 
           onEditTask={this.onEditTask} 
-          onDeleteTask={this.onDeleteTask} 
+          onDeleteTask={this.onDeleteTask}
+          completed = {this.completed} 
+          onCompletedTask={this.onCompletedTask}
         />
         <Footer />
         </div>

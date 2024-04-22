@@ -1,11 +1,17 @@
 import './Task.css'
 
 
-const Task = ({ description, completed, created, onEdit, onDelete }) => {
+const Task = ({ description, completed, created, onEdit, onDelete,onCompleted }) => {
     return(
         <li className={completed ? "completed" : ""}>
           <div className="view">
-            <input className="toggle" type="checkbox" checked={completed}></input>
+            <input className="toggle" 
+                   type="checkbox" 
+                   checked={completed}
+                   onChange={onCompleted}
+            >
+              
+            </input>
             <label>
               <span className="description">{description}</span>
               <span className="created">{created}</span>
