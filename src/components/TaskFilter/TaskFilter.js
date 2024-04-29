@@ -1,17 +1,28 @@
 import './TaskFilter.css';
 
 
-const TaskFilter = ()=>{
+const TaskFilter = ({onAll, onActive, onDone})=>{
     return(
 <ul className="filters">
             <li>
-              <button className="selected">All</button>
+              <button 
+              className="selected"
+              onClick={onAll}
+              >
+                All
+                </button>
             </li>
             <li>
-              <button>Active</button>
+              <button
+              onClick = {onActive}>
+                Active
+                </button>
             </li>
             <li>
-              <button className='completed'>Completed</button>
+              <button
+               className='completed'
+               onClick = {onDone}
+               >Completed</button>
             </li>
           </ul>
     )

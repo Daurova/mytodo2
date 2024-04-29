@@ -1,11 +1,23 @@
 import './NewTaskForm.css';
 
 
-const NewTaskForm = ()=>{
+const NewTaskForm = ({onInputChange, onSubmit, onItemAdded, value})=>{
     return(
     <header className="header">
         <h1>todos</h1>
-        <input className="new-todo" placeholder="What needs to be done?" autofocus></input>
+        <form
+          onSubmit = {onSubmit}
+          > 
+        <input 
+          className="new-todo" 
+          placeholder="What needs to be done?" 
+          autoFocus
+          onChange = {onInputChange}
+          onItemAdded={onItemAdded}
+          value ={value}
+          >
+        </input>
+        </form> 
     </header>
 
     )}

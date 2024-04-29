@@ -1,19 +1,20 @@
 import Task from '../Task/Task'
 import './TaskList.css'
 
-const TaskList = ({ tasks = [], onEditTask, onDeleteTask, onCompletedTask }) => {
+const TaskList = ({ tasks , onEditTask, onDeleteTask, onCompletedTask, onDone, onEdit, onSubmitEdit }) => {
   return (
     <ul className="todo-list">
-      {tasks.map(({ id, description, completed, created }) => {
+      {tasks.map(({ id, description, completed, created,createdDate }) => {
         return (
           <Task
             key={id}
             description={description}
             completed={completed}
             created={created}
+            createdDate={createdDate}
 
             onEdit={() => {
-              onEditTask(id)
+              onEdit(id)
             }}
             onDelete={() => {
               onDeleteTask(id)
@@ -21,6 +22,10 @@ const TaskList = ({ tasks = [], onEditTask, onDeleteTask, onCompletedTask }) => 
             onCompleted = {()=>{
               onCompletedTask(id)
             }}
+            onEdited={()=>{
+              onSubmitEdit(id)
+            }
+            }
             
           />
         )
