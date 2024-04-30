@@ -211,4 +211,22 @@ onAll=()=>{
   }
 }
 
+
+App.defaultProps = {
+  tasks: [], 
+  filteredTasks: [], 
+  onEditTask:() => {},
+  onCompletedTask:() => {},
+  onDeleteTask:() => {},
+  onInputChange:() => {},
+  onSubmit:() => {},
+  getTasksToDoCount:() => {},
+  onItemAdded:() => {},
+  clearCompletedTasks:() => {},
+  onAll:() => {},
+  onActive:() => {},
+  onDone:() => {}
+};
+
+
 export default App;

@@ -22,5 +22,11 @@ const NewTaskForm = ({onInputChange, onSubmit, onItemAdded, value})=>{
 
     )}
     
+    NewTaskForm.defaultProps = {
+        onInputChange: () => {},
+        onSubmit: () => {},
+        onItemAdded: () => {},
+        value: ''
+    }; 
 export default NewTaskForm;
 

@@ -2,6 +2,7 @@ import Task from '../Task/Task'
 import './TaskList.css'
 
 const TaskList = ({ tasks , onEditTask, onDeleteTask, onCompletedTask, onDone, onEdit, onSubmitEdit }) => {
+
   return (
     <ul className="todo-list">
       {tasks.map(({ id, description, completed, created,createdDate }) => {
@@ -32,6 +33,16 @@ const TaskList = ({ tasks , onEditTask, onDeleteTask, onCompletedTask, onDone, o
       })}
     </ul>
   )
+  
 }
 
+TaskList.defaultProps = {
+  tasks: [],
+  onEditTask: () => {},
+  onDeleteTask: () => {},
+  onCompletedTask: () => {},
+  onDone: () => {},
+  onEdit: () => {},
+  onSubmitEdit: () => {}
+}
 export default TaskList;

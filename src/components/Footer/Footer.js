@@ -18,4 +18,14 @@ const Footer = ({tasksToDoCount, onAll,onActive, onDone, clearCompletedTasks})=>
     )
 }
 
+
+Footer.defaultProps = {
+    tasksToDoCount: () => 0,
+    onAll: () => {},
+    onActive: () => {},
+    onDone: () => {},
+    clearCompletedTasks: () => {}
+  }
+
+  
 export default Footer;

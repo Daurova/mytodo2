@@ -2,7 +2,7 @@ import './Task.css'
 import React, { useEffect, useState, useRef } from 'react'
 import {formatDistanceToNow} from 'date-fns';
 
-const Task = ({ description='нет описания', completed, created, createdDate, onEdit, onDelete, onCompleted, tasks, onEditedTask, onSubmitEdit, onSubmit, editedTasks, initialTasks }) => {
+const Task = ({ description, completed, created, createdDate, onEdit, onDelete, onCompleted, tasks, onEditedTask, onSubmitEdit, onSubmit, editedTasks, initialTasks }) => {
 
   const [isEditing, setIsEditing] = useState(false);
   let [editedDescription, setEditedDescription] = useState(description);
@@ -47,8 +47,7 @@ useEffect(() => {
      console.log (editedItem, tasks)
      setFinal(true)
      setIsEditing(false)
-      
-      
+       
   };
 
   return (
@@ -108,5 +107,21 @@ useEffect(() => {
   );
 
 }
+
+Task.defaultProps = {
+  description: 'no data',
+  completed: false,
+  created: 'no data',
+  createdDate: new Date(),
+  onEdit: () => {},
+  onDelete: () => {},
+  onCompleted: () => {},
+  tasks: [],
+  onEditedTask: () => {},
+  onSubmitEdit: () => {},
+  onSubmit: () => {},
+  editedTasks: [],
+  initialTasks: []
+};
 
 export default Task;

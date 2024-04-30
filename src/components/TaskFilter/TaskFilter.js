@@ -28,4 +28,10 @@ const TaskFilter = ({onAll, onActive, onDone})=>{
     )
 }
 
+TaskFilter.defaultProps = {
+  onAll: () => {},
+  onActive: () => {},
+  onDone: () => {}
+};
+
 export default TaskFilter;
