@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../../index'
+import {formatDistanceToNow} from 'date-fns';
 import Footer from '../Footer';
 import TaskList from '../TaskList/TaskList';
 import NewTaskForm from '../../components/NewTaskForm';
-import {formatDistanceToNow} from 'date-fns';
 
 
 class App extends Component {
