@@ -46,36 +46,36 @@ const Task = ({ description, completed, createdDate, onDelete, onCompleted, onSu
 
   return (
     <li className={completed ? 'completed' : ''}>
-      <div className="view">
+      <div className='view'>
         {isEditing && (
           <>
-            <form className="task-editing" onSubmit={onSubmitEdit}>
+            <form className='task-editing' onSubmit={onSubmitEdit}>
               <input
-                type="text"
+                type='text'
                 value={editedDescription}
                 onChange={handleDescriptionChange}
                 onBlur={() => setIsEditing(false)}
                 autoFocus
-                className="editing"
+                className='editing'
               />
-              <input className="toggle-none" type="checkbox" checked={completed} onChange={onCompleted} />
+              <input className='toggle-none' type='checkbox' checked={completed} onChange={onCompleted} />
 
-              {/* <button className="icon icon-edit" onClick={handleEdit}></button> */}
-              {/* <button className="icon icon-destroy" onClick={onDelete}></button> */}
+              {/* <button className='icon icon-edit' onClick={handleEdit}></button> */}
+              {/* <button className='icon icon-destroy' onClick={onDelete}></button> */}
             </form>
           </>
         )}
 
         {final && (
           <>
-            <form className="task-editing">
-              <input className="toggle" type="checkbox" checked={completed} onChange={onCompleted} />
+            <form className='task-editing'>
+              <input className='toggle' type='checkbox' checked={completed} onChange={onCompleted} />
               <label>
-                <span className="description">{editedDescription}</span>
-                <span className="created">{distance}</span>
+                <span className='description'>{editedDescription}</span>
+                <span className='created'>{distance}</span>
               </label>
-              <button className="icon icon-edit" onClick={handleEdit}></button>
-              <button className="icon icon-destroy" onClick={onDelete}></button>
+              <button className='icon icon-edit' onClick={handleEdit}></button>
+              <button className='icon icon-destroy' onClick={onDelete}></button>
             </form>
           </>
         )}

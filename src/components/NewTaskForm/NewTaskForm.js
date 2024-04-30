@@ -2,12 +2,12 @@ import './NewTaskForm.css'
 
 const NewTaskForm = ({ onInputChange, onSubmit, onItemAdded, value }) => {
   return (
-    <header className="header">
+    <header className='header'>
       <h1>todos</h1>
       <form onSubmit={onSubmit}>
         <input
-          className="new-todo"
-          placeholder="What needs to be done?"
+          className='new-todo'
+          placeholder='What needs to be done?'
           autoFocus
           onChange={onInputChange}
           onItemAdded={onItemAdded}

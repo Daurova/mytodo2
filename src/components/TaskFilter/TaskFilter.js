@@ -3,9 +3,9 @@ import './TaskFilter.css'
 
 const TaskFilter = ({ onAll, onActive, onDone }) => {
   return (
-    <ul className="filters">
+    <ul className='filters'>
       <li>
-        <button className="selected" onClick={onAll}>
+        <button className='selected' onClick={onAll}>
           All
         </button>
       </li>
@@ -13,7 +13,7 @@ const TaskFilter = ({ onAll, onActive, onDone }) => {
         <button onClick={onActive}>Active</button>
       </li>
       <li>
-        <button className="completed" onClick={onDone}>
+        <button className='completed' onClick={onDone}>
           Completed
         </button>
       </li>

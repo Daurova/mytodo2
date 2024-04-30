@@ -19,28 +19,28 @@ class App extends Component {
       },
       {
         id: 2,
-        description: "task 2",
+        description: 'task 2',
         created: new Date(),
         createdDate: new Date(),
         completed: false,
       },
       {
         id: 3,
-        description: "task 4",
+        description: 'task 4',
         created: new Date(),
         createdDate: new Date(),
         completed: false,
       },
       {
         id: 5,
-        description: "task 5",
+        description: 'task 5',
         created: new Date(),
         createdDate: new Date(),
       completed: false,
     },
     {
       id: 8,
-      description: "task 10",
+      description: 'task 10',
       created: new Date(),
       createdDate: new Date(),
       completed: false,
@@ -57,7 +57,7 @@ class App extends Component {
 
 
   onEditTask = (id) => {
-    console.log("edit ", id)
+    console.log('edit ', id)
     const updatedTasks = this.state.tasks.map(task => {
       if (task.id === id) {
           return {
@@ -178,7 +178,7 @@ class App extends Component {
   render() {
 
     return (
-      <div className="todoapp">
+      <div className='todoapp'>
         <NewTaskForm
         onInputChange={this.onInputChange}
         onSubmit = {this.onSubmit}
