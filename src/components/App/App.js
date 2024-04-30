@@ -44,27 +44,24 @@ class App extends Component {
       created: new Date(),
       createdDate: new Date(),
       completed: false,
-  }
-    ]
-  
+  },
+  ]
 
   state = {//changed
     tasks: [...this.initialTasks],
     filteredTasks:[...this.initialTasks],
     isFilterActive: false,
-
   }
-
 
   onEditTask = (id) => {
     console.log('edit ', id)
-    const updatedTasks = this.state.tasks.map(task => {
+    const updatedTasks = this.state.tasks.map((task) => {
       if (task.id === id) {
           return {
               ...task,
-              isEditing: true // добавляем флаг для редактирования
-          }
-      }
+              isEditing: true, // добавляем флаг для редактирования
+        }
+        }
       return task
   })
 
