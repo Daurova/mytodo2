@@ -7,7 +7,6 @@
     "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
-      "plugin:prettier/recommended",
       "plugin:import/errors",
       "plugin:import/warnings",
       "eslint-config-prettier"
@@ -22,13 +21,13 @@
     "plugins": ["react", "prettier", "import"],
     "rules": {
       "indent": ["error", 2],
-      // "prettier/prettier": "error",
+      "prettier/prettier": "error",
       
-      // "endOfLine": 2 ,      
+      "endOfLine": 2 ,      
       "usePrettierrc": 1,
       "linebreak-style": [0, "unix"],
       "quotes": ["error", "single"],
-      // "semi": ["error", "never"],
+      "semi": ["error", "never"],
       "react/react-in-jsx-scope": "off",
       "react/prop-types": 0,
       "import/no-unresolved": [2, { "caseSensitive": false }],
