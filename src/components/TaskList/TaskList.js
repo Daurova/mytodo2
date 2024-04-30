@@ -1,7 +1,8 @@
+/* eslint-disable prettier/prettier */
 import Task from '../Task/Task'
 import './TaskList.css'
 
-const TaskList = ({ tasks, onEditTask, onDeleteTask, onCompletedTask, onDone, onEdit, onSubmitEdit }) => {
+const TaskList = ({ tasks, onDeleteTask, onCompletedTask, onEdit, onSubmitEdit }) => {
   return (
     <ul className="todo-list">
       {tasks.map(({ id, description, completed, created, createdDate }) => {
@@ -29,7 +30,7 @@ const TaskList = ({ tasks, onEditTask, onDeleteTask, onCompletedTask, onDone, on
       })}
     </ul>
   )
-};
+}
 
 TaskList.defaultProps = {
   tasks: [],
@@ -40,4 +41,4 @@ TaskList.defaultProps = {
   onEdit: () => {},
   onSubmitEdit: () => {},
 }
-export default TaskList;
+export default TaskList

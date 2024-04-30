@@ -6,7 +6,7 @@ import TaskList from '../TaskList/TaskList';
 import NewTaskForm from '../../components/NewTaskForm';
 
 class App extends Component {
-  maxId = 100;
+  maxId = 100
   editedTasks = []
   doneTasks = [];  
   initialTasks = [

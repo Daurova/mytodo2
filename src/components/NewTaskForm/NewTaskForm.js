@@ -1,4 +1,5 @@
-import './NewTaskForm.css';
+/* eslint-disable prettier/prettier */
+import './NewTaskForm.css'
 
 const NewTaskForm = ({ onInputChange, onSubmit, onItemAdded, value }) => {
   return (
@@ -16,7 +17,7 @@ const NewTaskForm = ({ onInputChange, onSubmit, onItemAdded, value }) => {
       </form>
     </header>
   )
-};
+}
 
 NewTaskForm.defaultProps = {
   onInputChange: () => {},
@@ -24,4 +25,4 @@ NewTaskForm.defaultProps = {
   onItemAdded: () => {},
   value: '',
 }
-export default NewTaskForm;
+export default NewTaskForm

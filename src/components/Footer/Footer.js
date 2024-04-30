@@ -1,5 +1,6 @@
-import './Footer.css';
-import TaskFilter from '../TaskFilter/TaskFilter';
+/* eslint-disable prettier/prettier */
+import './Footer.css'
+import TaskFilter from '../TaskFilter/TaskFilter'
 
 const Footer = ({ tasksToDoCount, onAll, onActive, onDone, clearCompletedTasks }) => {
   return (
@@ -10,15 +11,14 @@ const Footer = ({ tasksToDoCount, onAll, onActive, onDone, clearCompletedTasks }
         Clear completed
       </button>
     </footer>
-  );
-};
+  )
+}
 
 Footer.defaultProps = {
   tasksToDoCount: () => 0,
   onAll: () => {},
   onActive: () => {},
   onDone: () => {},
-  clearCompletedTasks: () => {},
-};
-
-export default Footer;
+  clearCompletedTasks: () => {}
+}
+export default Footer
