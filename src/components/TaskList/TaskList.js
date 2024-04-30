@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Task from '../Task/Task'
 import './TaskList.css'
 

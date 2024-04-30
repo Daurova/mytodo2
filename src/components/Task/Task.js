@@ -1,5 +1,3 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable semi */
 import './Task.css'
 import React, { useEffect, useState } from 'react'
 import { formatDistanceToNow } from 'date-fns'

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import './TaskFilter.css'
 
 const TaskFilter = ({ onAll, onActive, onDone }) => {

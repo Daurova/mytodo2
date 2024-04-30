@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import './Footer.css'
 import TaskFilter from '../TaskFilter/TaskFilter'
 
