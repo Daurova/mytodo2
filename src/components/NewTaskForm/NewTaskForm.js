@@ -1,32 +1,27 @@
 import './NewTaskForm.css';
 
-
-const NewTaskForm = ({onInputChange, onSubmit, onItemAdded, value})=>{
-    return(
+const NewTaskForm = ({ onInputChange, onSubmit, onItemAdded, value }) => {
+  return (
     <header className="header">
-        <h1>todos</h1>
-        <form
-          onSubmit = {onSubmit}
-          > 
-        <input 
-          className="new-todo" 
-          placeholder="What needs to be done?" 
+      <h1>todos</h1>
+      <form onSubmit={onSubmit}>
+        <input
+          className="new-todo"
+          placeholder="What needs to be done?"
           autoFocus
-          onChange = {onInputChange}
+          onChange={onInputChange}
           onItemAdded={onItemAdded}
-          value ={value}
-          >
-        </input>
-        </form> 
+          value={value}
+        ></input>
+      </form>
     </header>
+  )
+};
 
-    )}
-    
-    NewTaskForm.defaultProps = {
-        onInputChange: () => {},
-        onSubmit: () => {},
-        onItemAdded: () => {},
-        value: ''
-    }; 
+NewTaskForm.defaultProps = {
+  onInputChange: () => {},
+  onSubmit: () => {},
+  onItemAdded: () => {},
+  value: '',
+}
 export default NewTaskForm;
-

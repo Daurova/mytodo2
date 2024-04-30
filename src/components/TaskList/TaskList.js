@@ -1,11 +1,10 @@
 import Task from '../Task/Task'
 import './TaskList.css'
 
-const TaskList = ({ tasks , onEditTask, onDeleteTask, onCompletedTask, onDone, onEdit, onSubmitEdit }) => {
-
+const TaskList = ({ tasks, onEditTask, onDeleteTask, onCompletedTask, onDone, onEdit, onSubmitEdit }) => {
   return (
     <ul className="todo-list">
-      {tasks.map(({ id, description, completed, created,createdDate }) => {
+      {tasks.map(({ id, description, completed, created, createdDate }) => {
         return (
           <Task
             key={id}
@@ -13,28 +12,24 @@ const TaskList = ({ tasks , onEditTask, onDeleteTask, onCompletedTask, onDone, o
             completed={completed}
             created={created}
             createdDate={createdDate}
-
             onEdit={() => {
               onEdit(id)
             }}
             onDelete={() => {
               onDeleteTask(id)
             }}
-            onCompleted = {()=>{
+            onCompleted={() => {
               onCompletedTask(id)
             }}
-            onEdited={()=>{
+            onEdited={() => {
               onSubmitEdit(id)
-            }
-            }
-            
+            }}
           />
         )
       })}
     </ul>
   )
-  
-}
+};
 
 TaskList.defaultProps = {
   tasks: [],
@@ -43,6 +38,6 @@ TaskList.defaultProps = {
   onCompletedTask: () => {},
   onDone: () => {},
   onEdit: () => {},
-  onSubmitEdit: () => {}
+  onSubmitEdit: () => {},
 }
 export default TaskList;

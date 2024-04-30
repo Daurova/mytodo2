@@ -1,37 +1,30 @@
-import './TaskFilter.css';
+/* eslint-disable prettier/prettier */
+import './TaskFilter.css'
 
-
-const TaskFilter = ({onAll, onActive, onDone})=>{
-    return(
-<ul className="filters">
-            <li>
-              <button 
-              className="selected"
-              onClick={onAll}
-              >
-                All
-                </button>
-            </li>
-            <li>
-              <button
-              onClick = {onActive}>
-                Active
-                </button>
-            </li>
-            <li>
-              <button
-               className='completed'
-               onClick = {onDone}
-               >Completed</button>
-            </li>
-          </ul>
-    )
+const TaskFilter = ({ onAll, onActive, onDone }) => {
+  return (
+    <ul className="filters">
+      <li>
+        <button className="selected" onClick={onAll}>
+          All
+        </button>
+      </li>
+      <li>
+        <button onClick={onActive}>Active</button>
+      </li>
+      <li>
+        <button className="completed" onClick={onDone}>
+          Completed
+        </button>
+      </li>
+    </ul>
+  )
 }
 
 TaskFilter.defaultProps = {
   onAll: () => {},
   onActive: () => {},
-  onDone: () => {}
+  onDone: () => {},
 };
 
-export default TaskFilter;
+export default TaskFilter

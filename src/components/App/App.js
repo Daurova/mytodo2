@@ -1,24 +1,21 @@
-import React, { Component } from 'react';
-import '../../index'
-import {formatDistanceToNow} from 'date-fns';
+import React, { Component } from 'react'
+import '../../index';
+import {formatDistanceToNow} from 'date-fns'
 import Footer from '../Footer';
 import TaskList from '../TaskList/TaskList';
 import NewTaskForm from '../../components/NewTaskForm';
 
-
 class App extends Component {
-  maxId=100;
-    editedTasks=[]
-    doneTasks=[];
-    
-
-    initialTasks = [
-      {
-        id: 1,
-        description: "task 1",
-        created: new Date(),
-        createdDate: new Date(),
-        completed: false
+  maxId = 100;
+  editedTasks = []
+  doneTasks = [];  
+  initialTasks = [
+    {
+      id: 1,
+      description: 'task 1',
+      created: new Date(),
+      createdDate: new Date(),
+      completed: false
       },
       {
         id: 2,
