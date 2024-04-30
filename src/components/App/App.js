@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../index'
-import {formatDistanceToNow} from 'date-fns'
+import { formatDistanceToNow } from 'date-fns'
 import Footer from '../Footer'
 import TaskList from '../TaskList/TaskList'
 import NewTaskForm from '../../components/NewTaskForm'
@@ -15,35 +15,35 @@ class App extends Component {
       description: 'task 1',
       created: new Date(),
       createdDate: new Date(),
-      completed: false
+      completed: false,
       },
       {
         id: 2,
         description: "task 2",
         created: new Date(),
         createdDate: new Date(),
-        completed: false
+        completed: false,
       },
       {
         id: 3,
         description: "task 4",
         created: new Date(),
         createdDate: new Date(),
-        completed: false
+        completed: false,
       },
       {
         id: 5,
         description: "task 5",
         created: new Date(),
         createdDate: new Date(),
-      completed: false
+      completed: false,
     },
     {
       id: 8,
       description: "task 10",
       created: new Date(),
       createdDate: new Date(),
-      completed: false
+      completed: false,
   }
     ]
   
@@ -51,7 +51,7 @@ class App extends Component {
   state = {//changed
     tasks: [...this.initialTasks],
     filteredTasks:[...this.initialTasks],
-    isFilterActive: false
+    isFilterActive: false,
 
   }
 
@@ -73,14 +73,14 @@ class App extends Component {
     }
 
   
-  onCompletedTask=(id) => {
+  onCompletedTask = (id) => {
     console.log('complete', id)
-    this.setState (({tasks})=>{
-      const updatedTasks = tasks.map(task => {
+    this.setState (({ tasks })=>{
+      const updatedTasks = tasks.map((task) => {
         if (task.id === id) {
           return {
             ...task,
-            completed: !task.completed
+            completed: !task.completed,
           }
         }
         return task
@@ -92,33 +92,33 @@ class App extends Component {
   } 
 
   onDeleteTask = (id) => {
-    console.log("delete ", id)
-    this.setState(({tasks})=>{
-      const idx = tasks.findIndex((el)=>el.id===id)
+    console.log('delete ', id)
+    this.setState(({ tasks }) => {
+      const idx = tasks.findIndex((el)=> el.id ===id)
       const newTasks = [
-        ...tasks.slice(0,idx),
-        ...tasks.slice(idx+1)
+        ...tasks.slice(0, idx),
+        ...tasks.slice(idx + 1)
       ]
-      return {tasks: newTasks}
+      return { tasks: newTasks }
     })
   }
 
-  completed = (id)=>{
+  completed = (id) => {
     console.log(id)  }
   
-  onInputChange=(event)=>{
+  onInputChange = (event) => {
     console.log(event.target.value)
     this.setState({
       description: event.target.value
     })
   }
    
-  onSubmit = (event)=>{
+  onSubmit = (event) => {
     console.log('submit')
     event.preventDefault()
     this.onItemAdded(this.state.description)
     this.setState({
-      description:''
+      description: ''
     })
   }
 
@@ -131,7 +131,7 @@ class App extends Component {
     const newItem ={
       id: this.maxId++,
       description: description,
-      created: "created 5 minutes ago",
+      created: 'created 5 minutes ago',
       createdDate: new Date(),
       completed: false
     }
@@ -162,7 +162,7 @@ class App extends Component {
   })
 }
    onActive=({filteredTasks})=>{
-  console.log("onActive")
+  console.log('onActive')
   const activeTasks = this.state.tasks.filter(task => !task.completed)
   this.setState({ filteredTasks: activeTasks, isFilterActive: true})
 }
