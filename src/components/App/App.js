@@ -107,7 +107,7 @@ class App extends Component {
   }
 
   completed = (id)=>{
-console.log(id)  }
+    console.log(id)  }
   
   onInputChange=(event)=>{
     console.log(event.target.value);
@@ -157,14 +157,14 @@ console.log(id)  }
     const updatedTasks = this.state.tasks.filter(task => !task.completed);
     this.setState({ tasks: updatedTasks })}
 
-onAll=()=>{
+  onAll=()=>{
   console.log('onAll')
     this.setState(({tasks})=>{
     const allTasks = this.initialTasks;
     this.setState({ filteredTasks: allTasks, isFilterActive: false })
   });
 }
- onActive=({filteredTasks})=>{
+   onActive=({filteredTasks})=>{
   console.log("onActive")
   const activeTasks = this.state.tasks.filter(task => !task.completed);
   this.setState({ filteredTasks: activeTasks, isFilterActive: true});
