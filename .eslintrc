@@ -24,7 +24,7 @@
       "indent": ["error", 2],
       // "prettier/prettier": "error",
       
-      "endOfLine": 0 ,      
+      "endOfLine": 2 ,      
       "usePrettierrc": 1,
       "linebreak-style": [0, "unix"],
       "quotes": ["error", "single"],
