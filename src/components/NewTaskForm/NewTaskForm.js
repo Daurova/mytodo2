@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import './NewTaskForm.css'
 
 const NewTaskForm = ({ onInputChange, onSubmit, onItemAdded, value }) => {

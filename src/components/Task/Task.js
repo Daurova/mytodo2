@@ -1,48 +1,48 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable semi */
-import './Task.css';
-import React, { useEffect, useState } from 'react';
-import { formatDistanceToNow } from 'date-fns';
+import './Task.css'
+import React, { useEffect, useState } from 'react'
+import { formatDistanceToNow } from 'date-fns'
 
 const Task = ({ description, completed, createdDate, onDelete, onCompleted, onSubmitEdit }) => {
-  const [isEditing, setIsEditing] = useState(false);
-  let [editedDescription, setEditedDescription] = useState(description);
-  const [final, setFinal] = useState(true);
-  const [distance] = useState(formatDistanceToNow(createdDate));
-  //  const [createdAgo, setCreatedAgo]=useState(createdDate);
+  const [isEditing, setIsEditing] = useState(false)
+  let [editedDescription, setEditedDescription] = useState(description)
+  const [final, setFinal] = useState(true)
+  const [distance] = useState(formatDistanceToNow(createdDate))
+  //  const [createdAgo, setCreatedAgo]=useState(createdDate)
 
   //  useEffect(() => {
-  // console.log({created})}, []);
-  useEffect(() => {}, []);
+  // console.log({created})}, [])
+  useEffect(() => {}, [])
 
   const handleEdit = () => {
-    setIsEditing(true);
-    setFinal(false);
-  };
+    setIsEditing(true)
+    setFinal(false)
+  }
 
   const handleDescriptionChange = (e) => {
-    setEditedDescription(e.target.value);
-    console.log(e.target.value);
-    editedDescription = e.target.value;
-    console.log(editedDescription);
-    return editedDescription;
-  };
+    setEditedDescription(e.target.value)
+    console.log(e.target.value)
+    editedDescription = e.target.value
+    console.log(editedDescription)
+    return editedDescription
+  }
   onSubmitEdit = (event, tasks) => {
-    event.preventDefault();
-    console.log('submitEdit', editedDescription);
-    let eid = 1000;
+    event.preventDefault()
+    console.log('submitEdit', editedDescription)
+    let eid = 1000
     const editedItem = {
       id: eid++,
       description: editedDescription,
       created: 'created 5 minutes ago',
       createdDate: new Date(),
       completed: false,
-    };
+    }
     //
-    console.log(editedItem, tasks);
-    setFinal(true);
-    setIsEditing(false);
-  };
+    console.log(editedItem, tasks)
+    setFinal(true)
+    setIsEditing(false)
+  }
 
   return (
     <li className={completed ? 'completed' : ''}>
@@ -81,8 +81,8 @@ const Task = ({ description, completed, createdDate, onDelete, onCompleted, onSu
         )}
       </div>
     </li>
-  );
-};
+  )
+}
 
 Task.defaultProps = {
   description: 'no data',
@@ -98,6 +98,6 @@ Task.defaultProps = {
   onSubmit: () => {},
   editedTasks: [],
   initialTasks: [],
-};
+}
 
-export default Task;
+export default Task

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -12,3 +11,4 @@ const __dirname = path.dirname(__filename)
 const compat = new FlatCompat({ baseDirectory: __dirname, recommendedConfig: pluginJs.configs.recommended })
 
 export default [{ languageOptions: { globals: { ...globals.browser, ...globals.node } } }, ...compat.extends('airbnb')]
+
