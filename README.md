@@ -1,10 +1,10 @@
-# Vercel link:
-
-https://mytodo2-git-new-branch-name-oksanas-projects-b4d1e9ed.vercel.app/
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Vercel link:
+
+https://mytodo2-git-new-branch-name-oksanas-projects-b4d1e9ed.vercel.app/
 
 ## Available Scripts
 
