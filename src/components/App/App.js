@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../index'
-import { formatDistanceToNow } from 'date-fns'
+// import { formatDistanceToNow } from 'date-fns'
 import Footer from '../Footer'
 import TaskList from '../TaskList/TaskList'
 import NewTaskForm from '../../components/NewTaskForm'
@@ -16,35 +16,35 @@ class App extends Component {
       created: new Date(),
       createdDate: new Date(),
       completed: false,
-      },
-      {
-        id: 2,
-        description: 'task 2',
-        created: new Date(),
-        createdDate: new Date(),
-        completed: false,
-      },
-      {
-        id: 3,
-        description: 'task 4',
-        created: new Date(),
-        createdDate: new Date(),
-        completed: false,
-      },
-      {
-        id: 5,
-        description: 'task 5',
-        created: new Date(),
-        createdDate: new Date(),
-      completed: false,
     },
     {
-      id: 8,
-      description: 'task 10',
+      id: 2,
+      description: 'task 2',
       created: new Date(),
       createdDate: new Date(),
       completed: false,
-  },
+    },
+    {
+      id: 3,
+      description: 'task 4',
+      created: new Date(),
+      createdDate: new Date(),
+      completed: false,
+    },
+    {
+    id: 5,
+    description: 'task 5',
+    created: new Date(),
+    createdDate: new Date(),
+    completed: false,
+    },
+    {
+    id: 8,
+    description: 'task 10',
+    created: new Date(),
+    createdDate: new Date(),
+    completed: false,
+    },
   ]
 
   state = {//changed
@@ -57,17 +57,17 @@ class App extends Component {
     console.log('edit ', id)
     const updatedTasks = this.state.tasks.map((task) => {
       if (task.id === id) {
-          return {
-              ...task,
-              isEditing: true, // добавляем флаг для редактирования
+        return {
+          ...task,
+          isEditing: true, // добавляем флаг для редактирования
         }
-        }
+      }
       return task
-  })
+    })
 
-  this.setState({ tasks: updatedTasks })
+    this.setState({ tasks: updatedTasks })
    
-    }
+  }
 
   
   onCompletedTask = (id) => {
@@ -142,7 +142,7 @@ class App extends Component {
         tasks: newArr
       }
     }
-  )
+    )
   }
   
 
@@ -152,16 +152,16 @@ class App extends Component {
     this.setState({ tasks: updatedTasks })}
 
   onAll=()=>{
-  console.log('onAll')
+    console.log('onAll')
     this.setState(({tasks})=>{
-    const allTasks = this.initialTasks
-    this.setState({ filteredTasks: allTasks, isFilterActive: false })
+      const allTasks = this.initialTasks
+      this.setState({ filteredTasks: allTasks, isFilterActive: false })
   })
 }
-   onActive=({filteredTasks})=>{
-  console.log('onActive')
-  const activeTasks = this.state.tasks.filter(task => !task.completed)
-  this.setState({ filteredTasks: activeTasks, isFilterActive: true})
+  onActive=({filteredTasks})=>{
+    console.log('onActive')
+    const activeTasks = this.state.tasks.filter(task => !task.completed)
+    this.setState({ filteredTasks: activeTasks, isFilterActive: true})
 }
   onDone=({filteredTasks})=>{
     console.log('onDone')
@@ -177,9 +177,9 @@ class App extends Component {
     return (
       <div className='todoapp'>
         <NewTaskForm
-        onInputChange={this.onInputChange}
-        onSubmit = {this.onSubmit}
-        value={this.state.description}
+          onInputChange={this.onInputChange}
+          onSubmit = {this.onSubmit}
+          value={this.state.description}
         />
         <TaskList 
           tasks={this.state.isFilterActive ? 
@@ -200,7 +200,7 @@ class App extends Component {
           clearCompletedTasks={this.clearCompletedTasks}
 
         />
-        </div>
+      </div>
     )
   }
 }
