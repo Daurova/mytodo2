@@ -18,13 +18,13 @@
       "ecmaVersion": 12,
       "sourceType": "module"
     },
-    "plugins": ["react", "prettier", "import", "eslint-plugin-prettier"],
+    "plugins": ["react", "prettier", "import"],
     "rules": {
       "indent": ["error", 2],
       // "prettier/prettier": "error",
       
       "endOfLine": 0,      
-      "usePrettierrc": 2,
+      "usePrettierrc": 0,
       "linebreak-style": [0, "unix"],
       "quotes": ["error", "single"],
       "semi": ["error", "never"],
