@@ -18,7 +18,7 @@
       "ecmaVersion": 12,
       "sourceType": "module"
     },
-    "plugins": ["react", "prettier", "import"],
+    "plugins": ["react", "prettier", "import", "eslint-plugin-prettier"],
     "rules": {
       "indent": ["error", 2],
       // "prettier/prettier": "error",
