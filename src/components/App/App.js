@@ -154,17 +154,17 @@ class App extends Component {
 
   onAll=()=>{
     console.log('onAll')
-    this.setState(({tasks})=>{
+    this.setState(()=>{
       const allTasks = this.initialTasks
       this.setState({ filteredTasks: allTasks, isFilterActive: false })
     })
   }
-  onActive=({filteredTasks})=>{
+  onActive=()=>{
     console.log('onActive')
     const activeTasks = this.state.tasks.filter(task => !task.completed)
     this.setState({ filteredTasks: activeTasks, isFilterActive: true})
   }
-  onDone=({filteredTasks})=>{
+  onDone=()=>{
     console.log('onDone')
     const doneTasks = this.state.tasks.filter(task => task.completed)
     this.setState({ filteredTasks: doneTasks, isFilterActive: true })
