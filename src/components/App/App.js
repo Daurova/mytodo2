@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { formatDistanceToNow } from 'date-fns'
 
-import '../../index'
-// import { formatDistanceToNow } from 'date-fns'
 import Footer from '../Footer'
 import TaskList from '../TaskList/TaskList'
 import NewTaskForm from '../../components/NewTaskForm'
+
+import '../../index'
 
 class App extends Component {
   maxId = 100
@@ -144,6 +145,8 @@ class App extends Component {
       }
     }
     )
+    console.log(formatDistanceToNow(new Date()))
+
   }
   
 
@@ -222,6 +225,5 @@ App.defaultProps = {
   onActive:() => {},
   onDone:() => {}
 }
-
 
 export default App

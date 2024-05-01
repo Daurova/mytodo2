@@ -2,16 +2,30 @@ import './Task.css'
 import React, { useEffect, useState } from 'react'
 import { formatDistanceToNow } from 'date-fns'
 
-const Task = ({ description, completed, createdDate, onDelete, onCompleted, onSubmitEdit }) => {
+const Task = ({ description, completed, createdDate, onDelete, onCompleted, onSubmitEdit}) => {
   const [isEditing, setIsEditing] = useState(false)
   let [editedDescription, setEditedDescription] = useState(description)
   const [final, setFinal] = useState(true)
-  const [distance] = useState(formatDistanceToNow(createdDate))
+  const [distance, setDistance] = useState(formatDistanceToNow(createdDate))
   //  const [createdAgo, setCreatedAgo]=useState(createdDate)
 
   //  useEffect(() => {
   // console.log({created})}, [])
-  useEffect(() => {}, [])
+  // const createdDateRef = useRef(new Date())
+  // useEffect(() => {
+  //   const intervalId = setInterval(()=>{
+  //     setDistance(formatDistanceToNow(createdDate))
+  //   }, 60000)
+  // }, [])
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const newDistance = formatDistanceToNow(createdDate)
+      setDistance(newDistance)
+    }, 60000)
+
+    return () => clearInterval(intervalId)
+  }, [createdDate])
 
   const handleEdit = () => {
     setIsEditing(true)
