@@ -24,7 +24,7 @@
       // "prettier/prettier": "error",
       
       "endOfLine": 0,      
-      "usePrettierrc": 1,
+      "usePrettierrc": "true",
       "linebreak-style": [0, "unix"],
       "quotes": ["error", "single"],
       "semi": ["error", "never"],
