@@ -32,18 +32,18 @@ class App extends Component {
       completed: false,
     },
     {
-    id: 5,
-    description: 'task 5',
-    created: new Date(),
-    createdDate: new Date(),
-    completed: false,
+      id: 5,
+      description: 'task 5',
+      created: new Date(),
+      createdDate: new Date(),
+      completed: false,
     },
     {
-    id: 8,
-    description: 'task 10',
-    created: new Date(),
-    createdDate: new Date(),
-    completed: false,
+      id: 8,
+      description: 'task 10',
+      created: new Date(),
+      createdDate: new Date(),
+      completed: false,
     },
   ]
 
@@ -156,13 +156,13 @@ class App extends Component {
     this.setState(({tasks})=>{
       const allTasks = this.initialTasks
       this.setState({ filteredTasks: allTasks, isFilterActive: false })
-  })
-}
+    })
+  }
   onActive=({filteredTasks})=>{
     console.log('onActive')
     const activeTasks = this.state.tasks.filter(task => !task.completed)
     this.setState({ filteredTasks: activeTasks, isFilterActive: true})
-}
+  }
   onDone=({filteredTasks})=>{
     console.log('onDone')
     const doneTasks = this.state.tasks.filter(task => task.completed)
