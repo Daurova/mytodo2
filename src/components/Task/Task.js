@@ -1,5 +1,5 @@
 import './Task.css'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { formatDistanceToNow } from 'date-fns'
 
 const Task = ({ description, completed, createdDate, onDelete, onCompleted, onSubmitEdit}) => {
@@ -7,6 +7,19 @@ const Task = ({ description, completed, createdDate, onDelete, onCompleted, onSu
   let [editedDescription, setEditedDescription] = useState(description)
   const [final, setFinal] = useState(true)
   const [distance, setDistance] = useState(formatDistanceToNow(createdDate))
+  const [date, setDate] = useState(new Date(0));
+  const taskCreationTime = useRef(new Date());
+  const [timeElapsed, setTimeElapsed] = useState(0); // State to store elapsed time
+
+ useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Calculate the time elapsed since the task was created
+      const elapsedTime = new Date() - taskCreationTime.current; // Difference in milliseconds
+      setTimeElapsed(elapsedTime);
+    }, 1000); // Update every second
+
+    return () => clearInterval(intervalId);
+  }, []);
   //  const [createdAgo, setCreatedAgo]=useState(createdDate)
 
   //  useEffect(() => {
@@ -17,6 +30,11 @@ const Task = ({ description, completed, createdDate, onDelete, onCompleted, onSu
   //     setDistance(formatDistanceToNow(createdDate))
   //   }, 60000)
   // }, [])
+
+
+  // const tick = () => {
+  //   setDate(new Date());
+  // };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -86,6 +104,10 @@ const Task = ({ description, completed, createdDate, onDelete, onCompleted, onSu
                 <span className='description'>{editedDescription}</span>
                 <span className='created'>{distance}</span>
               </label>
+                            <h2>It is {new Date(timeElapsed).toLocaleTimeString([], { minute: '2-digit', second: '2-digit' })}.</h2>
+
+                              {/* <h2>It is {date.toLocaleTimeString()}.</h2> */}
+
               <button className='icon icon-edit' onClick={handleEdit}></button>
               <button className='icon icon-destroy' onClick={onDelete}></button>
             </form>
