@@ -60,7 +60,7 @@ todo-list li label .created {
 	display: block;
 	line-height: 1.2;
 	transition: color 0.4s;
-	font-weight: 400;
+	font-weight: 100;
 	color: #4d4d4d;
 }
 
@@ -147,4 +147,11 @@ li .icon:hover {
 li.editing .view {
 	display: none;
 }
+
+.hidden {
+	display: none;
+}
+
+
+
 

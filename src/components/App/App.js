@@ -10,7 +10,8 @@ import '../../index'
 class App extends Component {
   maxId = 100
   editedTasks = []
-  doneTasks = [] 
+  doneTasks = []
+  typeTasks = 'all'
   initialTasks = [
     {
       id: 1,
@@ -53,6 +54,7 @@ class App extends Component {
     tasks: [...this.initialTasks],
     filteredTasks:[...this.initialTasks],
     isFilterActive: false,
+    typeTasks: 'all'
   }
 
   onEditTask = (id) => {
@@ -146,10 +148,7 @@ class App extends Component {
     }
     )
     console.log(formatDistanceToNow(new Date()))
-
   }
-  
-
 
   clearCompletedTasks = () => {
     const updatedTasks = this.state.tasks.filter(task => !task.completed)
@@ -157,27 +156,18 @@ class App extends Component {
 
   onAll=()=>{
     console.log('onAll')
-    this.setState(()=>{
-      const allTasks = this.initialTasks
-      this.setState({ filteredTasks: allTasks, isFilterActive: false })
-    })
+    this.setState({ typeTasks: 'all' })
   }
   onActive=()=>{
     console.log('onActive')
-    const activeTasks = this.state.tasks.filter(task => !task.completed)
-    this.setState({ filteredTasks: activeTasks, isFilterActive: true})
+    this.setState({ typeTasks: 'active' })
   }
   onDone=()=>{
     console.log('onDone')
-    const doneTasks = this.state.tasks.filter(task => task.completed)
-    this.setState({ filteredTasks: doneTasks, isFilterActive: true })
-
+    this.setState({ typeTasks: 'done' })
   }
-  
 
-
-  render() {
-
+render() {
     return (
       <div className='todoapp'>
         <NewTaskForm
@@ -186,15 +176,12 @@ class App extends Component {
           value={this.state.description}
         />
         <TaskList 
-          tasks={this.state.isFilterActive ? 
-            this.state.filteredTasks : this.state.tasks}
+          tasks={this.state.tasks}
           onEditTask={this.onEditTask} 
           onDeleteTask={this.onDeleteTask}
           completed = {this.completed} 
           onCompletedTask={this.onCompletedTask}
-          onDone = {this.onDone}
-          onActive={this.onActive}
-          onAll={this.onAll}
+          typeTasks={this.state.typeTasks}
         />
         <Footer
           tasksToDoCount = {this.getTasksToDoCount}
@@ -202,13 +189,11 @@ class App extends Component {
           onActive={this.onActive}
           onDone={this.onDone}
           clearCompletedTasks={this.clearCompletedTasks}
-
         />
       </div>
     )
   }
 }
-
 
 App.defaultProps = {
   tasks: [], 
@@ -227,3 +212,4 @@ App.defaultProps = {
 }
 
 export default App
+

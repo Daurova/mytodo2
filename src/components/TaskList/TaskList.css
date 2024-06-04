@@ -10,3 +10,33 @@
 	border-bottom: 1px solid hsl(0, 0%, 93%);
 }
 
+.icon-pause:after {
+	content: '⏸';
+}
+.icon-play:after {
+	content: '▶';
+}
+.icon-play {
+	font-size: 15px;
+	right: 190px;
+}
+
+.icon-pause {
+	font-size: 15px;
+
+	right: 160px;
+}
+
+.icon:hover {
+	color: #af5b5e;
+}
+.icon {
+	width: 30px;
+	height: 40px;
+	font-size: 34px;
+	color: #cc9a9a;
+	margin: auto 0;
+	transition: color 0.2s ease-out;
+	cursor: pointer;
+}
+
