@@ -1,6 +1,5 @@
 Vercel link:
-https://mytodo2-f3al.vercel.app/
-
+https://mytodo2-gamma.vercel.app/
 
 # Getting Started with Create React App
 
